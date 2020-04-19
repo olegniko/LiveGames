@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test">
+    <listeners>
+        <listener class-name="helper.ListenerSuite"></listener>
+        <listener class-name="helper.ListenerTest"></listener>
+
+    </listeners>
+    <test name="BetGamesTvReal">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.BetGamesTvReal">
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
