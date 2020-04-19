@@ -38,7 +38,7 @@ public class LoginPopupCorrectLoginFromSearch {
     @Test(groups = {"CUR2"})
     public void loginBetGamesTvTest() throws Exception {
         casinoPage.search(exampleBundle.getString("bet_games_tv_game"));
-        casinoPage.clickPlayButton(casinoPage.getBetGamesTvSearchResultGameElement());
+        casinoPage.clickElement(casinoPage.getBetGamesTvSearchResultGameElement());
         casinoPage.correctLoginByPopup(exampleBundle.getString("correct_login"), exampleBundle.getString("correct_password"));
         assertTrue(casinoPage.getDepositButtonHeaderElement().isDisplayed());
     }

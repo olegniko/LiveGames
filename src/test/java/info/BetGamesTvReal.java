@@ -106,33 +106,37 @@ public class BetGamesTvReal {
         assertTrue(betGamesTvGame.getTextStakeAmountSpeedy7().equals("1€"));
 
         betGamesTvGame.clickElement(betGamesTvGame.getChooseRedSpeedy7());
-        if (betGamesTvGame.getTextTotalCashoutSpeedy7().equals("1€")) {
-
+       /* if (betGamesTvGame.getTextBetButtonTextSpeedy7().equals("1€") {
+            betGamesTvGame.getTextTotalCashoutSpeedy7().equals("1€"))
         } else
-            betGamesTvGame.clickElement(betGamesTvGame.getChooseRedSpeedy7());
+            betGamesTvGame.clickElement(betGamesTvGame.getChooseRedSpeedy7());*/
 
         betGamesTvGame.waitIfElementIsEnabledFluent(betGamesTvGame.getStakeAmountMessageSpeedy7(), 25, 1);
-        bet = betGamesTvGame.getTextStakeAmountMessageSpeedy7();
+        /*bet = betGamesTvGame.getTextStakeAmountMessageSpeedy7();
         String betNumber = betGamesTvGame.removeLastSymbol(bet);
-        System.out.println("Bet is " + bet);
+        System.out.println("Bet is " + bet);*/
 
         betGamesTvGame.waitIfElementIsEnabledFluent(betGamesTvGame.getBetAcceptedMessageSpeedy7(), 25, 1);
         System.out.println("Bet is accepted ");
 
+        bet = betGamesTvGame.getTextBetButtonTextSpeedy7();
+        String betNumber = betGamesTvGame.removeLastSymbol(bet);
+        System.out.println("Bet is " + bet);
 
-        betGamesTvGame.waitIfOneOfElementsAreVisible(betGamesTvGame.getLoseMessageMessageSpeedy7(), betGamesTvGame.getWinMessageSpeedy7(), 35, 1);
+        betGamesTvGame.waitIfOneOfElementsAreVisible(betGamesTvGame.getLoseMessageMessageSpeedy7(), betGamesTvGame.getWinMessageSpeedy7(), 40, 1);
+   //     betGamesTvGame.waitIfElementIsEnabled(betGamesTvGame.getBetButtonTextSpeedy7());
         result = betGamesTvGame.getTextBetButtonTextSpeedy7();
         System.out.println("Result is " + result);
         if (result.equals(bet)) {
             takeSnapShot();
             System.out.println("Bet is lose");
-            expectedBalance = (oldBalanceInHeader - Double.parseDouble(betNumber));
+            expectedBalance = betGamesTvGame.round(oldBalanceInHeader - Double.parseDouble(betNumber),2);
             System.out.println("Expected balance is " + expectedBalance);
         } else {
             betGamesTvGame.clickIfElementIsClickableFluent(betGamesTvGame.getTotalCashoutSpeedy7());
             takeSnapShot();
             System.out.println("Bet is win");
-            expectedBalance = (oldBalanceInHeader - Double.parseDouble(betNumber) + (Double.parseDouble(possibleWinNumber)));
+            expectedBalance = betGamesTvGame.round(oldBalanceInHeader - Double.parseDouble(betNumber) + (Double.parseDouble(possibleWinNumber)),2);
 
             System.out.println("Expected balance is " + expectedBalance);
         }

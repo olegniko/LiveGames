@@ -61,6 +61,13 @@ public class CasinoPage extends MainPage {
 
     @FindBy(css = "input[name='search']")
     protected WebElement searchFieldElement;
+
+    public WebElement getSearchResultModuleElement() {
+        return searchResultModuleElement;
+    }
+
+    @FindBy(xpath = "//div[contains(@class,'search-result-module')]")
+    protected WebElement searchResultModuleElement;
     @FindBy(xpath = "//label[contains(@class,'search__icon-clear')]")
     protected WebElement crossIconSearchFieldElement;
     @FindBy(xpath = "//label[contains(@class,'search__icon-search-container search-module_search__icon-search-container')]")
@@ -90,7 +97,7 @@ public class CasinoPage extends MainPage {
         return betGamesTvSearchResultGameElement;
     }
 
-    @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBetGamesTv']")
+    @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBetGamesTv']//ancestor::div[contains(@class,'game-card-module_card-size')]")
     protected WebElement betGamesTvSearchResultGameElement;
 
 
@@ -430,7 +437,7 @@ public class CasinoPage extends MainPage {
         waitIfElementIsClickableFluent(getSearchFieldElement());
         getSearchFieldElement().sendKeys(data);
         logger.info("Data = '" + data + "' is send to Search Field");
-        driverWait(2);
+        waitIfElementIsEnabledFluent(getSearchResultModuleElement(),10,1);
     }
 
 
@@ -545,8 +552,7 @@ public class CasinoPage extends MainPage {
     }
 
     public void clickElement(WebElement element) throws Exception {
-        waitIfElementIsClickableFluent(element);
-        element.click();
+        clickIfElementIsClickableFluent(element);
         logger.info("Click " + element + "is made");
     }
 
