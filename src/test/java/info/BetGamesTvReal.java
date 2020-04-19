@@ -147,7 +147,7 @@ public class BetGamesTvReal {
         assertTrue(newBalanceInHeader.equals(expectedBalance));
     }
 
-    @Test(groups = {"CUR2"}, priority = 3)
+    /*@Test(groups = {"CUR2"}, priority = 3)
     public void betOnBlackSpeedyRealTest() throws Exception {
        Double oldBalanceInHeader;
         String bet;
@@ -213,5 +213,5 @@ public class BetGamesTvReal {
 
         System.out.println("New Balance in header is " + newBalanceInHeader);
         assertTrue(newBalanceInHeader.equals(expectedBalance));
-}
+}*/
 }

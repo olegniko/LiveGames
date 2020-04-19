@@ -32,9 +32,15 @@ public class HeaderElements {
 
     @Test(groups = {"CUR2"})
     public void sportEnabledTest() {
-        assertTrue(casinoPage.getSportHeaderElement().isDisplayed());
-        assertTrue(casinoPage.getSportHeaderElement().isEnabled());
-        assertEquals(casinoPage.getTextSportHeaderElement(), exampleBundle.getString("sport_header"));
+        if (System.getProperty("locale").equals("ec")) {
+            assertTrue(casinoPage.getSportHeaderElementES().isDisplayed());
+            assertTrue(casinoPage.getSportHeaderElementES().isEnabled());
+            assertEquals(casinoPage.getTextSportHeaderElementES(), exampleBundle.getString("sport_header"));
+        } else {
+            assertTrue(casinoPage.getSportHeaderElement().isDisplayed());
+            assertTrue(casinoPage.getSportHeaderElement().isEnabled());
+            assertEquals(casinoPage.getTextSportHeaderElement(), exampleBundle.getString("sport_header"));
+        }
     }
 
     @Test(groups = {"CUR2"})

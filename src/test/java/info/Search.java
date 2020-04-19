@@ -29,7 +29,7 @@ public class Search {
     }
 
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void searchFieldEnabledTest() throws Exception {
         assertTrue(casinoPage.getSearchFieldElement().isDisplayed());
         assertTrue(casinoPage.getSearchFieldElement().isEnabled());
@@ -59,7 +59,7 @@ public class Search {
         assertEquals(casinoPage.getTextSearchFieldElement(), exampleBundle.getString("search_field_header"));
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void oneSymbolsHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_one_letter"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -67,7 +67,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void oneSymbolsBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_one_letter"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -75,7 +75,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void twoSymbolsHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_two_letters"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -83,7 +83,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void twoSymbolsBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_two_letters"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -91,7 +91,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_three_letters"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -99,7 +99,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_three_letters"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -107,7 +107,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsSymbolsSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_special_symbols"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -115,7 +115,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsSymbolsSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_special_symbols"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -123,7 +123,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsRussianLanguageSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_russian_letters"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -131,7 +131,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsRussianLanguageSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_russian_letters"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -139,7 +139,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsDiffCasesSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_incorrect_different_cases"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -147,7 +147,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsDiffCasesSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_incorrect_different_cases"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -155,7 +155,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsNumbersSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_numbers"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -163,7 +163,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResultsNumbersSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_numbers"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -171,7 +171,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResults23symbolsSearchHeaderMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_23_symbols"));
         assertTrue(casinoPage.getSearchResultHeaderElement().isDisplayed());
@@ -179,7 +179,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void noResults23symbolsSearchBodyMessageTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_23_symbols"));
         assertTrue(casinoPage.getSearchResultBodyElement().isDisplayed());
@@ -187,7 +187,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void betGamesTvSearchTest() throws Exception {
         casinoPage.search(exampleBundle.getString("bet_games_tv_game"));
         casinoPage.waitIfElementIsClickableFluent(casinoPage.getBetGamesTvSearchResultGameElement());
@@ -195,7 +195,7 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
-    @Test(groups = {"CUR2"},priority = 2)
+    @Test(groups = {"CUR2"})
     public void differentCasesSearchTest() throws Exception {
         casinoPage.search(exampleBundle.getString("search_bet_games_tv_game_different_cases"));
         casinoPage.waitIfElementIsClickableFluent(casinoPage.getBetGamesTvSearchResultGameElement());

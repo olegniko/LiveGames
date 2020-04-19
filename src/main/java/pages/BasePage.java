@@ -233,7 +233,7 @@ public abstract class BasePage {
 
 
     public String getNextTabUrlPage() throws InterruptedException {
-        driverWait(3);
+        driverWait(4);
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
         String url = driver.getCurrentUrl();

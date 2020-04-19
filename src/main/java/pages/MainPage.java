@@ -14,6 +14,14 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = "//div[@id='header_container']//a[@aria-label='Sport']")
     protected WebElement sportHeaderElement;
+
+    public WebElement getSportHeaderElementES() {
+        return sportHeaderElementES;
+    }
+    public String getTextSportHeaderElementES() {
+        return sportHeaderElementES.getText();
+    }
+
     @FindBy(xpath = "//div[@id='header_container']//a[contains(@href,'/home')]")
     protected WebElement sportHeaderElementES;
     @FindBy(xpath = "//div[@id='header_container']//a[contains(@href,'/live')]")

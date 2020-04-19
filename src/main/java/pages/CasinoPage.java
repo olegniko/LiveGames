@@ -65,9 +65,9 @@ public class CasinoPage extends MainPage {
     protected WebElement crossIconSearchFieldElement;
     @FindBy(xpath = "//label[contains(@class,'search__icon-search-container search-module_search__icon-search-container')]")
     protected WebElement searchIconSearchFieldElement;
-    @FindBy(css = "h2[class='not-found__title not-found-module_not-found__title_HWSVm ']")
+    @FindBy(xpath = "//h2[contains(@class,'title not-found-module')]")
     protected WebElement searchResultHeaderElement;
-    @FindBy(css = "p[class='not-found__info not-found-module_not-found__info_3jaT0 ']")
+    @FindBy(xpath = "//p[contains(@class,'not-found-module')]")
     protected WebElement searchResultBodyElement;
 
     @FindBy(xpath = "//a[normalize-space(text()) = 'olegAutotestTab']")
