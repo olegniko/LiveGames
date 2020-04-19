@@ -58,14 +58,26 @@ public class CasinoPage extends MainPage {
     @FindBy(xpath = "//span[@data-punter-balance-type='main']//ancestor::a")
     protected WebElement balanceCurrencyHeaderElement;
 
+    @FindBy(xpath = "//div[contains(@class,'content not-found-module')]//h2")
+    protected WebElement notFoundTitle404Element;
+    @FindBy(xpath = "//div[contains(@class,'content not-found-module')]//p")
+    protected WebElement notFoundBody404Element;
+
+    public WebElement getNotFoundTitle404Element() { return notFoundTitle404Element; }
+    public WebElement getNotFoundBody404Element() { return notFoundBody404Element; }
+    public WebElement getNotFoundButton404Element() { return notFoundButton404Element; }
+
+    public String getTextNotFoundTitle404Element() { return notFoundTitle404Element.getText(); }
+    public String getTextNotFoundBody404Element() { return notFoundBody404Element.getText(); }
+    public String getTextNotFoundButton404Element() { return notFoundButton404Element.getText(); }
+
+    @FindBy(xpath = "//div[contains(@class,'content not-found-module')]//button")
+    protected WebElement notFoundButton404Element;
 
     @FindBy(css = "input[name='search']")
     protected WebElement searchFieldElement;
-
-    public WebElement getSearchResultModuleElement() {
-        return searchResultModuleElement;
-    }
-
+    @FindBy(xpath = "//div[contains(@class,'search-game-result__title')]")
+    protected WebElement searchResultSuccesfulTitleElement;
     @FindBy(xpath = "//div[contains(@class,'search-result-module')]")
     protected WebElement searchResultModuleElement;
     @FindBy(xpath = "//label[contains(@class,'search__icon-clear')]")
@@ -143,6 +155,16 @@ public class CasinoPage extends MainPage {
     protected WebElement errorLaunchingGameElement;
 
 
+    public WebElement getSearchResultModuleElement() {
+        return searchResultModuleElement;
+    }
+
+    public WebElement getSearchResultSuccesfulTitleElement() {
+        return searchResultSuccesfulTitleElement;
+    }
+    public String getTextSearchResultSuccesfulTitleElement() {
+        return searchResultSuccesfulTitleElement.getText();
+    }
     public WebElement getLoginFieldHeaderElement() {
         return loginFieldHeaderElement;
     }

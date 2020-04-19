@@ -257,6 +257,10 @@ public abstract class BasePage {
         return url;
     }
 
+    public void enterUrl(String url){
+        driver.get(url);
+    }
+
     public void driverWait(int time) {
         driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
         initLogger.info("Implicit wait for " + time + " seconds");

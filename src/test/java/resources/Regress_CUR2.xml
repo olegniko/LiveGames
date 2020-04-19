@@ -283,6 +283,17 @@
             </class>
         </classes>
     </test>
+    <test name="Page404">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.Page404">
+            </class>
+        </classes>
+    </test>
 
 </suite>
 

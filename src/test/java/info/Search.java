@@ -203,5 +203,14 @@ public class Search {
         casinoPage.clearSearchField();
     }
 
+    @Test(groups = {"CUR2"})
+    public void searchResultTitleTest() throws Exception {
+        casinoPage.search(exampleBundle.getString("bet_games_tv_game"));
+        casinoPage.waitIfElementIsClickableFluent(casinoPage.getBetGamesTvSearchResultGameElement());
+        assertTrue(casinoPage.getSearchResultSuccesfulTitleElement().isDisplayed());
+        assertEquals(casinoPage.getTextSearchResultSuccesfulTitleElement(), exampleBundle.getString("search_result_title"));
+        casinoPage.clearSearchField();
+    }
+
 
 }
