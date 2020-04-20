@@ -18,6 +18,51 @@
             </class>
         </classes>
     </test>
+    <test name="Page404">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.Page404">
+            </class>
+        </classes>
+    </test>
+    <test name="IncorrectLoginByCorrectData">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.LoginPopupIncorrectLoginByCorrectData">
+            </class>
+        </classes>
+
+    </test>
+    <test name="BannerSeveralUnlogged">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.BannersSeveralUnlogged">
+            </class>
+        </classes>
+    </test>
+    <test name="BannerSeveralLogged">
+        <groups>
+            <run>
+                <include name="CUR2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="info.BannersSeveralLogged">
+            </class>
+        </classes>
+    </test>
 </suite>
 
 

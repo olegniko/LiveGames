@@ -62,15 +62,6 @@ public class CasinoPage extends MainPage {
     protected WebElement notFoundTitle404Element;
     @FindBy(xpath = "//div[contains(@class,'content not-found-module')]//p")
     protected WebElement notFoundBody404Element;
-
-    public WebElement getNotFoundTitle404Element() { return notFoundTitle404Element; }
-    public WebElement getNotFoundBody404Element() { return notFoundBody404Element; }
-    public WebElement getNotFoundButton404Element() { return notFoundButton404Element; }
-
-    public String getTextNotFoundTitle404Element() { return notFoundTitle404Element.getText(); }
-    public String getTextNotFoundBody404Element() { return notFoundBody404Element.getText(); }
-    public String getTextNotFoundButton404Element() { return notFoundButton404Element.getText(); }
-
     @FindBy(xpath = "//div[contains(@class,'content not-found-module')]//button")
     protected WebElement notFoundButton404Element;
 
@@ -92,26 +83,28 @@ public class CasinoPage extends MainPage {
     @FindBy(xpath = "//a[normalize-space(text()) = 'olegAutotestTab']")
     protected WebElement autotestTabElement;
 
-
     @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerRowNone']//parent::div//div[@aria-hidden='false']")
     protected WebElement bannerAutotestNoneElement;
     @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerRow']//parent::div//div[@aria-hidden='false']//a[@href='oleg']")
     protected WebElement bannerAutotestOpenURLElement;
-    @FindBy(xpath = "//*[@id=\"casino_app\"]/div/div/div/div[2]/casino-banner/div/div[2]/svg-button/div/div[3]")
+  @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerSeveral']//parent::div//div[@aria-hidden='false']")
+    protected WebElement bannerAutotestNoneSeveralElement;
+    @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerSeveral']//parent::div//div[@aria-hidden='false']//a[@href='oleg']")
+    protected WebElement bannerAutotestOpenURLSeveralElement;
+    @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerSeveral']//parent::div//div[contains(@class,'slick-arrow slick-next')]")
     protected WebElement bannerRightArrowElement;
-    @FindBy(xpath = "//*[@id=\"casino_app\"]/div/div/div/div[2]/casino-banner/div/div[1]/svg-button/div/div[3]")
+    @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerSeveral']//parent::div//div[contains(@class,'slick-arrow slick-prev')]")
     protected WebElement bannerLeftArrowElement;
+    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[1]//div")
+    protected WebElement dotNoneElement;
+    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[1]//div")
+    protected WebElement dotOpenUrlElement;
+
 
     @FindBy(xpath = "//div[normalize-space(text()) ='olegAutotestRow']//parent::div//div[normalize-space(text()) = 'olegAutotestBetGamesTv']")
     protected WebElement betGamesTvGameElement;
-
-    public WebElement getBetGamesTvSearchResultGameElement() {
-        return betGamesTvSearchResultGameElement;
-    }
-
     @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBetGamesTv']//ancestor::div[contains(@class,'game-card-module_card-size')]")
     protected WebElement betGamesTvSearchResultGameElement;
-
 
     @FindBy(xpath = "//form[contains(@class,'authorization-popup-module_authorization-form')]")
     protected WebElement loginPopupElement;
@@ -133,14 +126,10 @@ public class CasinoPage extends MainPage {
     protected WebElement incorrectLoginMessagePopupElement;
     @FindBy(xpath = "//button[contains(@class,'authorization-form__error')]")
     protected WebElement incorrectLoginMessageOkButtonPopupElement;
-
-    public WebElement getLoginRequiredElement() {
-        return loginRequiredElement;
-    }
-
-    public WebElement getPasswordRequiredElement() {
-        return passwordRequiredElement;
-    }
+    @FindBy(xpath = "//label[@id='recaptcha-anchor-label']")
+    protected WebElement captchaPopupElement;
+    @FindBy(xpath = "//iframe[contains(@src,'www.google.com/recaptcha')]")
+    protected WebElement iFrameCaptchaPopupElement;
 
     @FindBy(xpath = "//div[@class='tooltip invalid-tooltip'][1]")
     protected WebElement loginRequiredElement;
@@ -155,254 +144,94 @@ public class CasinoPage extends MainPage {
     protected WebElement errorLaunchingGameElement;
 
 
-    public WebElement getSearchResultModuleElement() {
-        return searchResultModuleElement;
-    }
-
-    public WebElement getSearchResultSuccesfulTitleElement() {
-        return searchResultSuccesfulTitleElement;
-    }
-    public String getTextSearchResultSuccesfulTitleElement() {
-        return searchResultSuccesfulTitleElement.getText();
-    }
-    public WebElement getLoginFieldHeaderElement() {
-        return loginFieldHeaderElement;
-    }
-
-    public WebElement getPasswordFieldHeaderElement() {
-        return passwordFieldHeaderElement;
-    }
-
-    public WebElement getLoginButtonHeaderElement() {
-        return loginButtonHeaderElement;
-    }
-
-    public WebElement getJoinNowButtonHeaderElement() {
-        return joinNowButtonHeaderElement;
-    }
-
-    public WebElement getLostPasswordHeaderElement() {
-        return lostPasswordHeaderElement;
-    }
-
-    public WebElement getIncorrectLoginMessageElement() {
-        return incorrectLoginMessageElement;
-    }
-
-    public WebElement getLoginMessageElement() {
-        return loginMessageElement;
-    }
-
-    public WebElement getIncorrectLoginMessageOkButtonElement() {
-        return incorrectLoginMessageOkButtonElement;
-    }
-
-
-    public WebElement getMarathonbetIconHeaderElement() {
-        return marathonbetIconHeaderElement;
-    }
-
-    public WebElement getLogoutButtonHeaderElement() {
-        return logoutButtonHeaderElement;
-    }
-
-    public WebElement getDepositButtonHeaderElement() {
-        return depositButtonHeaderElement;
-    }
-
-    public WebElement getMyAccountButtonHeaderElement() {
-        return myAccountButtonHeaderElement;
-    }
-
-
-    public WebElement getBalanceNumberHeaderElement() {
-        return balanceNumberHeaderElement;
-    }
-
-    public WebElement getBalanceCurrencyHeaderElement() {
-        return balanceCurrencyHeaderElement;
-    }
-
-    public WebElement getSearchFieldElement() {
-        return searchFieldElement;
-    }
-
-    public WebElement getCrossIconSearchFieldElement() {
-        return crossIconSearchFieldElement;
-    }
-
-    public WebElement getSearchIconSearchFieldElement() {
-        return searchIconSearchFieldElement;
-    }
-
-    public WebElement getSearchResultHeaderElement() {
-        return searchResultHeaderElement;
-    }
-
-    public WebElement getSearchResultBodyElement() {
-        return searchResultBodyElement;
-    }
-
-
-    public WebElement getAutotestTabElement() {
-        return autotestTabElement;
-    }
-
-
-    public WebElement getBannerAutotestNoneElement() {
-        return bannerAutotestNoneElement;
-    }
-
-    public WebElement getBannerAutotestOpenURLElement() {
-        return bannerAutotestOpenURLElement;
-    }
-
-    public WebElement getBannerRightArrowElement() {
-        return bannerRightArrowElement;
-    }
-
-    public WebElement getBannerLeftArrowElement() {
-        return bannerLeftArrowElement;
-    }
-
-
-
-    public WebElement getBetGamesTvGameElement() {
-        return betGamesTvGameElement;
-    }
-
-
-
-    public WebElement getLoginPopupElement() {
-        return loginPopupElement;
-    }
-
-    public WebElement getLoginPopupCrossElement() {
-        return loginPopupCrossElement;
-    }
-
-    public WebElement getLoginPopupTitleElement() {
-        return loginPopupTitleElement;
-    }
-
-    public WebElement getLoginFieldLoginPopupElement() {
-        return loginFieldLoginPopupElement;
-    }
-
-    public WebElement getPasswordFieldLoginPopupElement() {
-        return passwordFieldLoginPopupElement;
-    }
-
-    public WebElement getLostPasswordLoginPopupElement() {
-        return lostPasswordLoginPopupElement;
-    }
-
-    public WebElement getLoginButtonPopupElement() {
-        return loginButtonPopupElement;
-    }
-
-    public WebElement getJoinNowButtonPopupElement() {
-        return joinNowButtonPopupElement;
-    }
-
-    public WebElement getIncorrectLoginMessagePopupElement() {
-        return incorrectLoginMessagePopupElement;
-    }
-
-    public WebElement getIncorrectLoginMessageOkButtonPopupElement() {
-        return incorrectLoginMessageOkButtonPopupElement;
-    }
-
-    public WebElement getCrossInGameElement() {
-        return crossInGameElement;
-    }
-
-    public WebElement getiFrameGame() {
-        return iFrameGame;
-    }
-
-    public WebElement getErrorLaunchingGameElement() {
-        return errorLaunchingGameElement;
-    }
-
-    public String getTextLoginFieldHeaderElement() {
-        return loginFieldHeaderElement.getAttribute("placeholder");
-    }
-
-    public String getTextPasswordFieldHeaderElement() {
-        return passwordFieldHeaderElement.getAttribute("placeholder");
-    }
-
-    public String getTextLoginButtonHeaderElement() {
-        return loginButtonHeaderElement.getText();
-    }
-
-    public String getTextJoinNowButtonHeaderElement() {
-        return joinNowButtonHeaderElement.getText();
-    }
-
-    public String getTextLostPasswordHeaderElement() {
-        return lostPasswordHeaderElement.getText();
-    }
-
-    public String getTextLogoutButtonHeaderElement() {
-        return logoutButtonHeaderElement.getText();
-    }
-
-    public String getTextDepositButtonHeaderElement() {
-        return depositButtonHeaderElement.getText();
-    }
-
-    public String getTextMyAccountButtonHeaderElement() {
-        return myAccountButtonHeaderElement.getText();
-    }
-
-    public String getTextBalanceNumberHeaderElement() {
-        return balanceNumberHeaderElement.getText();
-    }
-
-    public String getTextBalanceCurrencyHeaderElement() {
-        return balanceCurrencyHeaderElement.getText();
-    }
-
-
-    public String getTextSearchFieldElement() {
-        return searchFieldElement.getAttribute("placeholder");
-    }
-
-    public String getTextSearchResultHeaderElement() {
-        return searchResultHeaderElement.getText();
-    }
-
-    public String getTextSearchResultBodyElement() {
-        return searchResultBodyElement.getText();
-    }
-
-
-
-    public String getTextLoginPopupTitleElement() {
-        return loginPopupTitleElement.getText();
-    }
-
-    public String getTextLoginFieldLoginPopupElement() {
-        return loginFieldLoginPopupElement.getAttribute("placeholder");
-    }
-
-    public String getTextPasswordFieldLoginPopupElement() {
-        return passwordFieldLoginPopupElement.getAttribute("placeholder");
-    }
-
-    public String getTextLostPasswordLoginPopupElement() {
-        return lostPasswordLoginPopupElement.getText();
-    }
-
-    public String getTextLoginButtonPopupElement() {
-        return loginButtonPopupElement.getText();
-    }
-
-    public String getTextJoinNowButtonPopupElement() {
-        return joinNowButtonPopupElement.getText();
-    }
+    public WebElement getLoginFieldHeaderElement() { return loginFieldHeaderElement; }
+    public WebElement getPasswordFieldHeaderElement() { return passwordFieldHeaderElement; }
+    public WebElement getLoginButtonHeaderElement() { return loginButtonHeaderElement; }
+    public WebElement getJoinNowButtonHeaderElement() { return joinNowButtonHeaderElement; }
+    public WebElement getLostPasswordHeaderElement() { return lostPasswordHeaderElement; }
+    public WebElement getIncorrectLoginMessageElement() { return incorrectLoginMessageElement; }
+    public WebElement getLoginMessageElement() { return loginMessageElement; }
+    public WebElement getIncorrectLoginMessageOkButtonElement() { return incorrectLoginMessageOkButtonElement; }
+    public WebElement getMarathonbetIconHeaderElement() { return marathonbetIconHeaderElement; }
+    public WebElement getLogoutButtonHeaderElement() { return logoutButtonHeaderElement; }
+    public WebElement getDepositButtonHeaderElement() { return depositButtonHeaderElement; }
+    public WebElement getMyAccountButtonHeaderElement() { return myAccountButtonHeaderElement; }
+    public WebElement getBalanceNumberHeaderElement() { return balanceNumberHeaderElement; }
+    public WebElement getBalanceCurrencyHeaderElement() { return balanceCurrencyHeaderElement; }
+
+    public WebElement getSearchFieldElement() { return searchFieldElement; }
+    public WebElement getCrossIconSearchFieldElement() { return crossIconSearchFieldElement; }
+    public WebElement getSearchIconSearchFieldElement() { return searchIconSearchFieldElement; }
+    public WebElement getSearchResultHeaderElement() { return searchResultHeaderElement; }
+    public WebElement getSearchResultBodyElement() { return searchResultBodyElement; }
+    public WebElement getSearchResultModuleElement() { return searchResultModuleElement; }
+    public WebElement getSearchResultSuccesfulTitleElement() { return searchResultSuccesfulTitleElement; }
+
+    public WebElement getAutotestTabElement() { return autotestTabElement; }
+
+    public WebElement getBannerAutotestNoneElement() { return bannerAutotestNoneElement; }
+    public WebElement getBannerAutotestOpenURLElement() { return bannerAutotestOpenURLElement; }
+    public WebElement getBannerAutotestNoneSeveralElement() { return bannerAutotestNoneSeveralElement; }
+    public WebElement getBannerAutotestOpenURLSeveralElement() { return bannerAutotestOpenURLSeveralElement; }
+    public WebElement getBannerRightArrowElement() { return bannerRightArrowElement; }
+    public WebElement getBannerLeftArrowElement() { return bannerLeftArrowElement; }
+    public WebElement getDotNoneElement() { return dotNoneElement; }
+    public WebElement getDotOpenUrlElement() { return dotOpenUrlElement; }
+
+    public WebElement getNotFoundTitle404Element() { return notFoundTitle404Element; }
+    public WebElement getNotFoundBody404Element() { return notFoundBody404Element; }
+    public WebElement getNotFoundButton404Element() { return notFoundButton404Element; }
+
+    public WebElement getBetGamesTvGameElement() {return betGamesTvGameElement; }
+    public WebElement getBetGamesTvSearchResultGameElement() { return betGamesTvSearchResultGameElement; }
+
+    public WebElement getLoginRequiredElement() { return loginRequiredElement; }
+    public WebElement getPasswordRequiredElement() { return passwordRequiredElement; }
+    public WebElement getLoginPopupElement() { return loginPopupElement; }
+    public WebElement getLoginPopupCrossElement() { return loginPopupCrossElement; }
+    public WebElement getLoginPopupTitleElement() { return loginPopupTitleElement; }
+    public WebElement getLoginFieldLoginPopupElement() { return loginFieldLoginPopupElement; }
+    public WebElement getPasswordFieldLoginPopupElement() { return passwordFieldLoginPopupElement; }
+    public WebElement getLostPasswordLoginPopupElement() { return lostPasswordLoginPopupElement; }
+    public WebElement getLoginButtonPopupElement() { return loginButtonPopupElement; }
+    public WebElement getJoinNowButtonPopupElement() { return joinNowButtonPopupElement; }
+    public WebElement getIncorrectLoginMessagePopupElement() { return incorrectLoginMessagePopupElement; }
+    public WebElement getCaptchaPopupElement() { return captchaPopupElement; }
+    public WebElement getiFrameCaptchaPopupElement() { return iFrameCaptchaPopupElement; }
+    public WebElement getIncorrectLoginMessageOkButtonPopupElement() { return incorrectLoginMessageOkButtonPopupElement; }
+
+    public WebElement getCrossInGameElement() { return crossInGameElement; }
+    public WebElement getiFrameGame() { return iFrameGame; }
+    public WebElement getErrorLaunchingGameElement() { return errorLaunchingGameElement; }
+
+
+
+
+
+    public String getTextIncorrectLoginMessagePopupElement() { return incorrectLoginMessagePopupElement.getText(); }
+    public String getTextLoginFieldHeaderElement() { return loginFieldHeaderElement.getAttribute("placeholder"); }
+    public String getTextPasswordFieldHeaderElement() { return passwordFieldHeaderElement.getAttribute("placeholder"); }
+    public String getTextLoginButtonHeaderElement() { return loginButtonHeaderElement.getText(); }
+    public String getTextJoinNowButtonHeaderElement() { return joinNowButtonHeaderElement.getText(); }
+    public String getTextLostPasswordHeaderElement() { return lostPasswordHeaderElement.getText(); }
+    public String getTextLogoutButtonHeaderElement() { return logoutButtonHeaderElement.getText(); }
+    public String getTextDepositButtonHeaderElement() { return depositButtonHeaderElement.getText(); }
+    public String getTextMyAccountButtonHeaderElement() { return myAccountButtonHeaderElement.getText(); }
+    public String getTextBalanceNumberHeaderElement() { return balanceNumberHeaderElement.getText(); }
+    public String getTextBalanceCurrencyHeaderElement() { return balanceCurrencyHeaderElement.getText(); }
+    public String getTextSearchFieldElement() { return searchFieldElement.getAttribute("placeholder"); }
+    public String getTextSearchResultHeaderElement() { return searchResultHeaderElement.getText(); }
+    public String getTextSearchResultBodyElement() { return searchResultBodyElement.getText(); }
+    public String getTextSearchResultSuccesfulTitleElement() { return searchResultSuccesfulTitleElement.getText(); }
+    public String getTextLoginPopupTitleElement() { return loginPopupTitleElement.getText(); }
+    public String getTextLoginFieldLoginPopupElement() { return loginFieldLoginPopupElement.getAttribute("placeholder"); }
+    public String getTextPasswordFieldLoginPopupElement() { return passwordFieldLoginPopupElement.getAttribute("placeholder"); }
+    public String getTextNotFoundTitle404Element() { return notFoundTitle404Element.getText(); }
+    public String getTextNotFoundBody404Element() { return notFoundBody404Element.getText(); }
+    public String getTextNotFoundButton404Element() { return notFoundButton404Element.getText(); }
+    public String getTextLostPasswordLoginPopupElement() { return lostPasswordLoginPopupElement.getText(); }
+    public String getTextLoginButtonPopupElement() { return loginButtonPopupElement.getText(); }
+    public String getTextJoinNowButtonPopupElement() { return joinNowButtonPopupElement.getText(); }
 
 
     public void fillLoginInHeader(String login) throws Exception {
@@ -582,7 +411,7 @@ public class CasinoPage extends MainPage {
     public void clearSearchField() throws Exception {
         getSearchFieldElement().clear();
     }
-    
+
 }
 
 
