@@ -42,9 +42,9 @@ public class LoginPopupIncorrectLoginByCorrectData {
     public void corectLoginByEmailTest() throws Exception {
         casinoPage.loginByPopup(exampleBundle.getString("correct_login_email"), exampleBundle.getString("correct_password"));
         String parentWindow = casinoPage.getParentWindow();
-        casinoPage.switchToFrame(casinoPage.getiFrameCaptchaPopupElement());
-        assertTrue(casinoPage.getCaptchaPopupElement().isDisplayed());
-        casinoPage.switchToParentFrame(parentWindow);
+      casinoPage.switchToFrame(casinoPage.getiFrameCaptchaPopupElement());
+        assertTrue(casinoPage.getCaptchaPopupElement().isEnabled());
+       casinoPage.switchToParentFrame(parentWindow);
         casinoPage.closeLoginPopup();
     }
 }

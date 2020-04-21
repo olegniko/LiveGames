@@ -154,7 +154,7 @@ public abstract class BasePage {
     }
 
     public void waitIfElementIsClickableFluent(WebElement element) throws Exception {
-        waitIfElementIsClickableFluent(element, 40, 1);
+        waitIfElementIsClickableFluent(element, 45, 1);
     }
 
 

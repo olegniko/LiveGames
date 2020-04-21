@@ -95,10 +95,14 @@ public class CasinoPage extends MainPage {
     protected WebElement bannerRightArrowElement;
     @FindBy(xpath = "//div[normalize-space(text()) = 'olegAutotestBannerSeveral']//parent::div//div[contains(@class,'slick-arrow slick-prev')]")
     protected WebElement bannerLeftArrowElement;
+    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[1][@class='slick-active']//div")
+    protected WebElement dotActiveNoneElement;
+    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[2][@class='slick-active']//div")
+    protected WebElement dotActiveOpenUrlElement;
     @FindBy(xpath = "//ul[@class = 'slick-dots']//li[1]//div")
-    protected WebElement dotNoneElement;
-    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[1]//div")
-    protected WebElement dotOpenUrlElement;
+    protected WebElement dotNotActiveNoneElement;
+    @FindBy(xpath = "//ul[@class = 'slick-dots']//li[2]//div")
+    protected WebElement dotNotActiveOpenUrlElement;
 
 
     @FindBy(xpath = "//div[normalize-space(text()) ='olegAutotestRow']//parent::div//div[normalize-space(text()) = 'olegAutotestBetGamesTv']")
@@ -126,7 +130,7 @@ public class CasinoPage extends MainPage {
     protected WebElement incorrectLoginMessagePopupElement;
     @FindBy(xpath = "//button[contains(@class,'authorization-form__error')]")
     protected WebElement incorrectLoginMessageOkButtonPopupElement;
-    @FindBy(xpath = "//label[@id='recaptcha-anchor-label']")
+    @FindBy(xpath = "//div[@class='rc-anchor-error-msg-container']")
     protected WebElement captchaPopupElement;
     @FindBy(xpath = "//iframe[contains(@src,'www.google.com/recaptcha')]")
     protected WebElement iFrameCaptchaPopupElement;
@@ -175,8 +179,10 @@ public class CasinoPage extends MainPage {
     public WebElement getBannerAutotestOpenURLSeveralElement() { return bannerAutotestOpenURLSeveralElement; }
     public WebElement getBannerRightArrowElement() { return bannerRightArrowElement; }
     public WebElement getBannerLeftArrowElement() { return bannerLeftArrowElement; }
-    public WebElement getDotNoneElement() { return dotNoneElement; }
-    public WebElement getDotOpenUrlElement() { return dotOpenUrlElement; }
+    public WebElement getActiveDotNoneElement() { return dotActiveNoneElement; }
+    public WebElement getActiveDotOpenUrlElement() { return dotActiveOpenUrlElement; }
+    public WebElement getNotActiveDotNoneElement() { return dotNotActiveNoneElement; }
+    public WebElement getNotActiveDotOpenUrlElement() { return dotNotActiveOpenUrlElement; }
 
     public WebElement getNotFoundTitle404Element() { return notFoundTitle404Element; }
     public WebElement getNotFoundBody404Element() { return notFoundBody404Element; }

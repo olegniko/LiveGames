@@ -4,7 +4,6 @@ import org.testng.annotations.*;
 import pages.CasinoPage;
 
 import static helper.ListenerSuite.suiteOfTests;
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 
@@ -50,37 +49,54 @@ public class BannersSeveralUnlogged {
     }
 
     @Test(groups = {"CUR2"})
-    public void dotNoneEnabledTest() throws Exception {
-        assertTrue(casinoPage.getDotNoneElement().isDisplayed());
-        assertTrue(casinoPage.getDotNoneElement().isEnabled());
+    public void dotNoneActiveTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestNoneSeveralElement(),12,1);
+        assertTrue(casinoPage.getActiveDotNoneElement().isDisplayed());
+        assertTrue(casinoPage.getActiveDotNoneElement().isEnabled());
     }
 
     @Test(groups = {"CUR2"})
-    public void dotOpenUrlEnabledTest() throws Exception {
-        assertTrue(casinoPage.getDotOpenUrlElement().isDisplayed());
-        assertTrue(casinoPage.getDotOpenUrlElement().isEnabled());
+    public void dotOpenUrlActiveTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestOpenURLSeveralElement(),12,1);
+        assertTrue(casinoPage.getActiveDotOpenUrlElement().isDisplayed());
+        assertTrue(casinoPage.getActiveDotOpenUrlElement().isEnabled());
     }
 
     @Test(groups = {"CUR2"})
-    public void clickDotNoneEnabledTest() throws Exception {
-        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestOpenURLSeveralElement(),10,1);
-        casinoPage.clickElement(casinoPage.getDotNoneElement());
-        assertTrue(casinoPage.getBannerAutotestNoneSeveralElement().isDisplayed());
+    public void dotNoneNotActiveTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestOpenURLSeveralElement(),12,1);
+        assertTrue(casinoPage.getNotActiveDotOpenUrlElement().isDisplayed());
+        assertTrue(casinoPage.getNotActiveDotOpenUrlElement().isEnabled());
     }
 
     @Test(groups = {"CUR2"})
-    public void clickDotOpenUrlEnabledTest() throws Exception {
-        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestNoneSeveralElement(),10,1);
-        casinoPage.clickElement(casinoPage.getDotOpenUrlElement());
-        assertTrue(casinoPage.getBannerAutotestOpenURLSeveralElement().isDisplayed());
+    public void dotOpenUrlNotActiveTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestNoneSeveralElement(),12,1);
+        assertTrue(casinoPage.getNotActiveDotNoneElement().isDisplayed());
+        assertTrue(casinoPage.getNotActiveDotNoneElement().isEnabled());
     }
 
+    @Test(groups = {"CUR2"})
+    public void clickDotNoneTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestOpenURLSeveralElement(),12,1);
+        casinoPage.clickElement(casinoPage.getNotActiveDotNoneElement());
+        assertTrue(casinoPage.getNotActiveDotOpenUrlElement().isDisplayed());
+        assertTrue(casinoPage.getNotActiveDotOpenUrlElement().isEnabled());
+    }
+
+    @Test(groups = {"CUR2"})
+    public void clickdotOpenUrlTest() throws Exception {
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestNoneSeveralElement(),12,1);
+        casinoPage.clickElement(casinoPage.getNotActiveDotOpenUrlElement());
+        assertTrue(casinoPage.getNotActiveDotNoneElement().isDisplayed());
+        assertTrue(casinoPage.getNotActiveDotNoneElement().isEnabled());
+    }
 
     @Test(groups = {"CUR2"})
     public void clickRightArrowFromNoneEnabledTest() throws Exception {
-        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestOpenURLSeveralElement(),10,1);
+        casinoPage.waitIfElementIsEnabledFluent(casinoPage.getBannerAutotestNoneSeveralElement(),10,1);
         casinoPage.clickElement(casinoPage.getBannerRightArrowElement());
-        assertFalse(casinoPage.getBannerAutotestOpenURLSeveralElement().isDisplayed());
+        assertTrue(casinoPage.getBannerAutotestOpenURLSeveralElement().isDisplayed());
     }
 
     @Test(groups = {"CUR2"})
@@ -89,7 +105,6 @@ public class BannersSeveralUnlogged {
         casinoPage.clickElement(casinoPage.getBannerLeftArrowElement());
         assertTrue(casinoPage.getBannerAutotestNoneSeveralElement().isDisplayed());
     }
-
   }
 
 
